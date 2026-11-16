@@ -1,27 +1,64 @@
-# Physics Formulas
 
-# 1. Speed = Distance / Time
-def speed(distance, time):
-    return distance / time
+def speed():
+    distance = float(input("Enter distance in metres: "))
+    time = float(input("Enter time in seconds: "))
+    result = distance / time
+    print("Speed =", result, "m/s")
 
-# 2. Force = Mass x Acceleration
-def force(mass, acceleration):
-    return mass * acceleration
 
-# 3. Kinetic Energy = 1/2 x Mass x Velocity^2
-def kinetic_energy(mass, velocity):
-    return 0.5 * mass * velocity ** 2
+def force():
+    mass = float(input("Enter mass in kg: "))
+    acceleration = float(input("Enter acceleration: "))
+    result = mass * acceleration
+    print("Force =", result, "N")
 
-# 4. Potential Energy = Mass x Gravity x Height
-def potential_energy(mass, height):
-    return mass * 9.8 * height
 
-# 5. Density = Mass / Volume
-def density(mass, volume):
-    return mass / volume
+def kinetic_energy():
+    mass = float(input("Enter mass in kg: "))
+    velocity = float(input("Enter velocity: "))
+    result = 0.5 * mass * velocity ** 2
+    print("Kinetic Energy =", result, "J")
 
-print("Speed:", speed(100, 20), "m/s")
-print("Force:", force(10, 5), "N")
-print("Kinetic Energy:", kinetic_energy(2, 10), "J")
-print("Potential Energy:", potential_energy(5, 10), "J")
-print("Density:", density(20, 4), "kg/m^3")
+
+def potential_energy():
+    mass = float(input("Enter mass in kg: "))
+    height = float(input("Enter height in metres: "))
+    result = mass * 9.8 * height
+    print("Potential Energy =", result, "J")
+
+
+def density():
+    mass = float(input("Enter mass in kg: "))
+    volume = float(input("Enter volume in cubic metres: "))
+    result = mass / volume
+    print("Density =", result, "kg/m3")
+
+
+while True:
+    print("\n===== PHYSICS CALCULATOR =====")
+    print("1. Speed")
+    print("2. Force")
+    print("3. Kinetic Energy")
+    print("4. Potential Energy")
+    print("5. Density")
+
+    choice = input("Select an operation (1-5): ")
+
+    if choice == "1":
+        speed()
+    elif choice == "2":
+        force()
+    elif choice == "3":
+        kinetic_energy()
+    elif choice == "4":
+        potential_energy()
+    elif choice == "5":
+        density()
+    else:
+        print("Invalid choice. Please select 1-5.")
+
+    again = input("Would you like to continue? (yes/no): ")
+
+    if again.lower() == "no":
+        print("Thank you for using the Physics Calculator!")
+        break
